@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+.venv/
+env/
+logs/*.log
+# Do not push restricted FINRA raw data to public GitHub.
+data/raw/study3_finra/NFCS*Data*
+data/raw/study3_finra/*.sav
+data/raw/study3_finra/*.dta
+data/raw/study3_finra/*.csv
+# Keep derived outputs optional; comment these lines if you want GitHub to show final figures/tables.
+# outputs/

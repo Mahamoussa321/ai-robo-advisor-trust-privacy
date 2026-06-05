@@ -1,0 +1,11 @@
+label,outcome,feature_group,effect,ci_low,ci_high,p_value,note
+Digital twin -> personalization,Perceived personalization,Digital twin,1.43,1.30,1.56,<0.001,Extracted from Study 1 secondary-analysis manuscript
+Digital twin -> privacy concern,Privacy concern,Digital twin,0.92,0.71,1.13,<0.001,Extracted from Study 1 secondary-analysis manuscript
+Digital twin -> usefulness,Usefulness / benefits,Digital twin,0.67,0.54,0.81,<0.001,Extracted from Study 1 secondary-analysis manuscript
+Digital twin -> trust,Trust,Digital twin,0.28,0.14,0.42,<0.001,Extracted from Study 1 secondary-analysis manuscript
+Digital twin -> adoption/advice,Adoption + advice composite,Digital twin,0.17,0.05,0.30,0.008,Extracted from Study 1 secondary-analysis manuscript
+Conversational AI -> social presence,Social presence,Conversational AI,1.46,1.31,1.61,<0.001,Extracted from Study 1 secondary-analysis manuscript
+Conversational AI -> trust,Trust,Conversational AI,0.29,0.15,0.42,<0.001,Extracted from Study 1 secondary-analysis manuscript
+Conversational AI -> usefulness,Usefulness / benefits,Conversational AI,0.22,0.08,0.36,0.002,Extracted from Study 1 secondary-analysis manuscript
+Conversational AI -> adoption/advice,Adoption + advice composite,Conversational AI,0.20,0.08,0.32,<0.001,Extracted from Study 1 secondary-analysis manuscript
+Interaction -> adoption/advice,Adoption + advice composite,Interaction,0.22,0.04,0.40,0.016,Extracted from Study 1 secondary-analysis manuscript

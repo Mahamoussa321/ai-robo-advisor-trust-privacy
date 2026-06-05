@@ -1,0 +1,11 @@
+name: robo-advisor-repro
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - statsmodels
+  - scikit-learn
+  - matplotlib
+  - python-docx
+  - pip

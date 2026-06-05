@@ -1,0 +1,3 @@
+Code license: MIT-style permission is granted to use, copy, modify, and distribute the scripts in this repository for academic/non-commercial research with attribution.
+
+Data licenses/terms are separate from the code license. Do not assume this license applies to third-party datasets. See DATA_LICENSES.md.
