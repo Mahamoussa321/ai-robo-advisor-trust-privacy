@@ -1,73 +1,57 @@
-# Personalization, Privacy, and Trust in AI Robo-Advisory
+# Global soil pollution by toxic metals threatens agriculture and human health
 
-Reproducible project package for the three-study manuscript:
+[https://doi.org/10.5061/dryad.83bk3jb2z](https://doi.org/10.5061/dryad.83bk3jb2z)
 
-**Personalization, Privacy, and Trust in AI Robo-Advisory: Experimental Evidence, Real-World Survey Validation, and Machine-Learning Prediction**
+## Description of the data and file structure
 
-## What this project reproduces
+#### File: Attachment\_1\_Soil\_pollution\_data\_sources
 
-Running the code regenerates:
+**Description:** This table compiles literature selected for the global soil pollution dataset. It presents key details, including the first author's last name, publication year, region, study area coordinates, and the title of the literature in separate columns. Detailed reference information for these publications is located at the end of the table.
 
-- all analysis tables in `outputs/*.csv`
-- all colorful manuscript figures in `outputs/*.png`
-- machine-learning performance and feature-importance tables
-- the final Word manuscript in `manuscript/robo_advisor_final_submission_ready.docx`
+#### File: Attachment\_2\_Source\_of\_co-variate\_and\_variable\_retention\_for\_modeling
 
-## Folder structure
+**Description:** This table provides basic information on variables used in modeling. The first column lists all the variables used in the model. Columns 2-8 show variables remaining after feature selection under Human health and ecological thresholds for each toxic metal. Columns 9-15 display variables remaining after feature selection under Agricultural thresholds for each toxic metal. If the variable is selected, it will be marked with a Y, otherwise it will be blank. Columns 16-22 present detailed information about the datasets of covariates, including the spatial resolution, temporal coverage, unit of measurement, data format, database version, data source and download link for each variable. The empty cells and symbol “\” both indicate that the corresponding dataset does not contain the specified information, i.e. missing data.
 
-```text
-data/
-  raw/study2_indonesia/        # Zenodo robo-advisor adoption survey Excel files
-  raw/study3_finra/            # FINRA data for private local use only
-  derived/study1/              # transparent Study 1 effect table
-scripts/
-  final_robo_advisor_analysis.py
-  create_final_submission_docx.py
-  run_all.py
-  verify_reproducibility.py
-outputs/                       # regenerated tables and figures
-manuscript/                     # regenerated manuscript
-logs/                           # run logs
-```
+#### File: Attachment\_3\_Feature\_importance\_and\_correlation\_with\_toxic\_metals
 
-## Quick reproducibility check
+**Description:** This table provides the importance of variables calculated using Shapley Additive Explanations (SHAP) and Mean Decrease in Node Impurity (MDI), along with the variables' correlation with toxic metals. It displays the importance and correlation of variables remaining in models after feature selection. The empty cell indicates that the corresponding variable has not been selected in the feature selection. Columns 1-2 list variable names and abbreviations used in modeling. Columns 3-9 and Columns 10-16 respectively show the average absolute value of SHAP value in models for toxic metals under Human Health and Ecological Thresholds (HHET) and Agricultural Thresholds (AT). Higher values indicate greater variable importance in the model. Columns 17 -23 and Columns 24-30 display the Pearson correlation coefficients between selected variables and concentrations of toxic metals in all the land use types and agricultural lands, respectively. Columns 31-37 and Columns 38-44 reveal the importance of variables calculated by MDI under HHET and AT. Larger values indicate greater variable importance.
 
-From the project root:
+#### File: Attachment\_4\_Global\_dataset\_of\_predicted\_toxic\_metals\_exceedance\_under\_HHET
 
-```bash
-python -m venv .venv
-.venv\Scripts\activate     # Windows PowerShell: .venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python scripts/run_all.py
-```
+**Description:** This table presents the probability of exceedance for different toxic metals under Human Health and Ecological Thresholds for each grid. Columns 1-2 provide the coordinates of the grid, and probabilities of exceedance for toxic metals are listed in the following columns.
 
-On Mac/Linux, activate with:
+#### File: Attachment\_5\_Global\_dataset\_of\_predicted\_toxic\_metals\_exceedance\_under\_AT
 
-```bash
-source .venv/bin/activate
-```
+**Description:** This table presents the probability of exceedance for different toxic metals under Agricultural Thresholds for each grid. Columns 1-2 provide the coordinates of the grid, and probabilities of exceedance for toxic metals are listed in the following columns.
 
-## Important GitHub warning
+#### File: Attachment\_6\_Distribution\_of\_sample\_location\_for\_As
 
-Use the **PUBLIC GitHub package** for pushing to GitHub. Do not push the private package if it contains raw FINRA files. FINRA data must be downloaded independently by each researcher under FINRA Foundation terms.
+**Description:** This figure presents the distribution of sample locations for As. The color of points represents the number of samples in each location. Points data (e.g. data from LUCAS) were aggregated according to administration devotions.
 
-## GitHub commands
+#### File: Attachment\_7\_Distribution\_of\_sample\_location\_for\_Cd
 
-```bash
-git init
-git add README.md DATA_LICENSES.md LICENSE_CODE.txt requirements.txt environment.yml .gitignore scripts data/raw/study2_indonesia data/derived/study1 outputs manuscript
-git commit -m "Initial reproducible robo-advisor analysis package"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-git push -u origin main
-```
+**Description:** This figure presents the distribution of sample locations for Cd. The color of points represents the number of samples in each location. Points data (e.g. data from LUCAS) were aggregated according to administration devotions.
 
-Do not add `data/raw/study3_finra/NFCS*Data*` to a public repository.
+#### File: Attachment\_8\_Distribution\_of\_sample\_location\_for\_Co
 
-## Suggested repository name
+**Description:** This figure presents the distribution of sample locations for Co. The color of points represents the number of samples in each location. Points data (e.g. data from LUCAS) were aggregated according to administration devotions.
 
-`ai-robo-advisor-trust-privacy-ml`
+#### File: Attachment\_9\_Distribution\_of\_sample\_location\_for\_Cr
 
-## Citation notes
+**Description:** This figure presents the distribution of sample locations for Cr. The color of points represents the number of samples in each location. Points data (e.g. data from LUCAS) were aggregated according to administration devotions.
 
-Cite the original datasets in the manuscript and README before submission. The code is reproducible, but the final journal upload still requires author affiliations, corresponding-author information, funding statement, conflict-of-interest statement, and target-journal formatting.
+#### File: Attachment\_10\_Distribution\_of\_sample\_location\_for\_Cu
+
+**Description:** This figure presents the distribution of sample locations for Cu. The color of points represents the number of samples in each location. Points data (e.g. data from LUCAS) were aggregated according to administration devotions.
+
+#### File: Attachment\_11\_Distribution\_of\_sample\_location\_for\_Ni
+
+**Description:** This figure presents the distribution of sample locations for Ni. The color of points represents the number of samples in each location. Points data (e.g. data from LUCAS) were aggregated according to administration devotions.
+
+#### File: Attachment\_12\_Distribution\_of\_sample\_location\_for\_Pb
+
+**Description:** This figure presents the distribution of sample locations for Pb. The color of points represents the number of samples in each location. Points data (e.g. data from LUCAS) were aggregated according to administration devotions.
+
+#### File: Attachment\_13\_Code\_for\_models\_development\_and\_data\_analysis
+
+**Description:** This file contains the code used in this study for model development and data analysis. The code is primarily written in Python, and the utilized packages are listed.
