@@ -1,57 +1,120 @@
-# Global soil pollution by toxic metals threatens agriculture and human health
+# AI Robo-Advisory Adoption: Personalization, Privacy, Trust, and Investor Validation
 
-[https://doi.org/10.5061/dryad.83bk3jb2z](https://doi.org/10.5061/dryad.83bk3jb2z)
+This repository contains the reproducible code, analysis outputs, figures, and manuscript materials for a three-study research project on AI robo-advisory adoption.
 
-## Description of the data and file structure
+## Manuscript title
 
-#### File: Attachment\_1\_Soil\_pollution\_data\_sources
+**Personalization, Privacy, and Trust in AI Robo-Advisory: Experimental Evidence, Real-World Survey Validation, and Machine-Learning Prediction**
 
-**Description:** This table compiles literature selected for the global soil pollution dataset. It presents key details, including the first author's last name, publication year, region, study area coordinates, and the title of the literature in separate columns. Detailed reference information for these publications is located at the end of the table.
+## Project overview
 
-#### File: Attachment\_2\_Source\_of\_co-variate\_and\_variable\_retention\_for\_modeling
+The project examines how AI-enabled robo-advisory systems are related to perceived personalization, privacy/security concern, trust, perceived benefit, willingness to use, and digital investor behavior.
 
-**Description:** This table provides basic information on variables used in modeling. The first column lists all the variables used in the model. Columns 2-8 show variables remaining after feature selection under Human health and ecological thresholds for each toxic metal. Columns 9-15 display variables remaining after feature selection under Agricultural thresholds for each toxic metal. If the variable is selected, it will be marked with a Y, otherwise it will be blank. Columns 16-22 present detailed information about the datasets of covariates, including the spatial resolution, temporal coverage, unit of measurement, data format, database version, data source and download link for each variable. The empty cells and symbol “\” both indicate that the corresponding dataset does not contain the specified information, i.e. missing data.
+The analysis combines three evidence sources:
 
-#### File: Attachment\_3\_Feature\_importance\_and\_correlation\_with\_toxic\_metals
+1. **Study 1: Digital-twin robo-advisor experiment**  
+   A derived experimental-effects table from a 2 x 2 study of digital-twin personalization and conversational-AI interface design.
 
-**Description:** This table provides the importance of variables calculated using Shapley Additive Explanations (SHAP) and Mean Decrease in Node Impurity (MDI), along with the variables' correlation with toxic metals. It displays the importance and correlation of variables remaining in models after feature selection. The empty cell indicates that the corresponding variable has not been selected in the feature selection. Columns 1-2 list variable names and abbreviations used in modeling. Columns 3-9 and Columns 10-16 respectively show the average absolute value of SHAP value in models for toxic metals under Human Health and Ecological Thresholds (HHET) and Agricultural Thresholds (AT). Higher values indicate greater variable importance in the model. Columns 17 -23 and Columns 24-30 display the Pearson correlation coefficients between selected variables and concentrations of toxic metals in all the land use types and agricultural lands, respectively. Columns 31-37 and Columns 38-44 reveal the importance of variables calculated by MDI under HHET and AT. Larger values indicate greater variable importance.
+2. **Study 2: Real robo-advisor adoption survey**  
+   Survey data from Indonesian Gen-Z digital-investment-app users, including constructs such as willingness to use, trust, perceived risk, security/privacy concern, perceived benefit, performance expectancy, financial literacy, social influence, and information quality.
 
-#### File: Attachment\_4\_Global\_dataset\_of\_predicted\_toxic\_metals\_exceedance\_under\_HHET
+3. **Study 3: Investor digital-readiness validation**  
+   FINRA NFCS 2024 Investor Survey analysis of U.S. investors' digital trading behavior, advisory-tool reliance, Internet-investment security concern, fraud concern, and investing knowledge.
 
-**Description:** This table presents the probability of exceedance for different toxic metals under Human Health and Ecological Thresholds for each grid. Columns 1-2 provide the coordinates of the grid, and probabilities of exceedance for toxic metals are listed in the following columns.
+4. **Machine-learning analysis**  
+   Predictive models, including regularized logistic regression and random forest models, used to evaluate willingness/use and digital-investing outcomes.
 
-#### File: Attachment\_5\_Global\_dataset\_of\_predicted\_toxic\_metals\_exceedance\_under\_AT
+## What this repository includes
 
-**Description:** This table presents the probability of exceedance for different toxic metals under Agricultural Thresholds for each grid. Columns 1-2 provide the coordinates of the grid, and probabilities of exceedance for toxic metals are listed in the following columns.
+- Python scripts to reproduce the analysis workflow
+- Study 1 derived effects data
+- Study 2 robo-advisor adoption survey files
+- FINRA documentation and instructions for obtaining restricted FINRA data
+- Generated tables and figures
+- Machine-learning performance and feature-importance outputs
+- Final manuscript files
+- Requirements and environment files
 
-#### File: Attachment\_6\_Distribution\_of\_sample\_location\_for\_As
+## Data access note
 
-**Description:** This figure presents the distribution of sample locations for As. The color of points represents the number of samples in each location. Points data (e.g. data from LUCAS) were aggregated according to administration devotions.
+The raw FINRA NFCS Investor Survey data are not included in this public repository. Researchers who want to reproduce the FINRA component should obtain the NFCS Investor Survey data directly from the FINRA Investor Education Foundation and follow the original data-use terms.
 
-#### File: Attachment\_7\_Distribution\_of\_sample\_location\_for\_Cd
+This repository includes only public/reproducible materials that can be shared with the code package, along with instructions for placing locally downloaded FINRA data if needed.
 
-**Description:** This figure presents the distribution of sample locations for Cd. The color of points represents the number of samples in each location. Points data (e.g. data from LUCAS) were aggregated according to administration devotions.
+## Reproducing the project
 
-#### File: Attachment\_8\_Distribution\_of\_sample\_location\_for\_Co
+From the project root on Windows PowerShell:
 
-**Description:** This figure presents the distribution of sample locations for Co. The color of points represents the number of samples in each location. Points data (e.g. data from LUCAS) were aggregated according to administration devotions.
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python scripts\run_all.py
+```
 
-#### File: Attachment\_9\_Distribution\_of\_sample\_location\_for\_Cr
+On Mac/Linux:
 
-**Description:** This figure presents the distribution of sample locations for Cr. The color of points represents the number of samples in each location. Points data (e.g. data from LUCAS) were aggregated according to administration devotions.
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python scripts/run_all.py
+```
 
-#### File: Attachment\_10\_Distribution\_of\_sample\_location\_for\_Cu
+The full workflow runs the analysis scripts, regenerates tables and figures, recreates the manuscript document, and performs a reproducibility check.
 
-**Description:** This figure presents the distribution of sample locations for Cu. The color of points represents the number of samples in each location. Points data (e.g. data from LUCAS) were aggregated according to administration devotions.
+## Repository structure
 
-#### File: Attachment\_11\_Distribution\_of\_sample\_location\_for\_Ni
+```text
+data/
+  derived/study1/          # Study 1 derived experimental effects
+  raw/study2_indonesia/    # Study 2 robo-advisor survey files
+  raw/study3_finra/        # FINRA documentation and data-download instructions
+scripts/
+  final_robo_advisor_analysis.py
+  create_final_submission_docx.py
+  run_all.py
+  verify_reproducibility.py
+outputs/
+  tables and figures generated by the workflow
+manuscript/
+  generated manuscript files
+```
 
-**Description:** This figure presents the distribution of sample locations for Ni. The color of points represents the number of samples in each location. Points data (e.g. data from LUCAS) were aggregated according to administration devotions.
+## Main outputs
 
-#### File: Attachment\_12\_Distribution\_of\_sample\_location\_for\_Pb
+Running the workflow regenerates:
 
-**Description:** This figure presents the distribution of sample locations for Pb. The color of points represents the number of samples in each location. Points data (e.g. data from LUCAS) were aggregated according to administration devotions.
+- descriptive statistics tables
+- construct reliability tables
+- regression tables
+- machine-learning performance tables
+- feature-importance outputs
+- manuscript figures
+- final manuscript document
 
-#### File: Attachment\_13\_Code\_for\_models\_development\_and\_data\_analysis
+## Requirements
 
-**Description:** This file contains the code used in this study for model development and data analysis. The code is primarily written in Python, and the utilized packages are listed.
+Install the required Python packages with:
+
+```bash
+pip install -r requirements.txt
+```
+
+Main dependencies include:
+
+- numpy
+- pandas
+- scipy
+- statsmodels
+- scikit-learn
+- matplotlib
+- python-docx
+
+## Citation
+
+Please cite the original datasets and this repository if you reuse the analysis code, figures, tables, or manuscript outputs.
+
+## License
+
+The analysis code is provided for academic reproducibility. Dataset-specific terms remain governed by the original data providers.
